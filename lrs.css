@@ -1,0 +1,80 @@
+@charset "utf-8";
+body{
+	font-size:14px;
+	color:#000;
+	font-family:LatoLight, '微软雅黑', "Microsoft YaHei", tahoma, Srial, helvetica, sans-serif;
+	font-weight: normal;
+	margin: 0px;
+	width: 100%;
+	height:100%;
+	overflow-x:hidden;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, textarea, th, td {
+    LIST-STYLE-TYPE: none;
+    margin: 0;
+    padding: 0;
+}
+div{
+	width:100%;
+}
+table{
+	width:98%;
+	margin: 0 1%;
+}
+tr{
+	width:100%;
+}
+th{
+	padding: 5px 10px;
+}
+td{
+	border: 1px solid #E0E0E0;
+	width:100%;
+	padding: 5px 10px;
+}
+table input{
+	width:90%;
+}
+.header{
+	font-size:20px;
+	line-height:30px;
+	border-left:6px solid #f59c00;
+	color:#000000;
+	font-weight:600;
+	padding:5px 20px 0 20px;
+	margin:0px 0px 20px 0px;
+}
+.content{
+	border-bottom: 1px solid #000000;
+	padding: 20px 0;
+}
+
+.title{
+	background: #E0E0E0;
+}
+.width5{
+	width:5%;
+}
+
+.width10{
+	width:10%;
+}
+.width15{
+	width:15%;
+}
+.width20{
+	width:20%;
+}
+.width25{
+	width:25%;
+}
+.width35{
+	width:35%;
+}
+.width45{
+	width:45%;
+}
+
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>first example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="avalon.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="lrs.css" />
+
+    <script>
+        var main = avalon.define({
+            $id: "main",
+
+            datas : [],
+            times : [],
+
+            types : ['', '狼人','好人','预言家','守卫','女巫','猎人'],
+            types2 : ['', '守卫救人','女巫解药','女巫毒药','1号被刀','2号被刀','3号被刀','4号被刀','5号被刀','6号被刀','7号被刀','8号被刀','9号被刀','10号被刀','11号被刀','12号被刀'],
+
+            initMain : function(){
+                var tdata = {isClick : false, prop:0, txt:''};
+                for(var i=0; i<12; i++){
+                    main.datas.push(tdata);
+                }
+
+                var ttime = {des:'', prop:0, txt:''};
+                for(var i=0; i<12; i++){
+                    main.times.push(ttime);
+                }
+
+            },
+
+            name: "司徒正美",
+
+        })
+        main.initMain();
+
+    </script>
+</head>
+
+<body ms-controller="main">
+    <div class="content">
+        <div class="header">场上信息</div>
+        <table  border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr class="title">
+                <th class="width15">上警</th>
+                <th class="width25">编号</th>
+                <th class="width25">属性</th>
+                <th class="width35">备注</th>
+            </tr>
+            <tr ms-for="($index,el) in @datas">
+                <td align="center" class="width15">
+                    <input class="click" type="checkbox" ms-duplex-checked="@el.isClick" />
+                </td>
+                <td align="center" class="width25">
+                    <div>{{$index+1}}号</div>
+                </td>
+                <td align="center" class="width25">
+                    <select  ms-duplex-number="@el.prop">
+                        <option ms-for="($index,tp) in @types" ms-attr="{value : $index}">{{tp}}</option>
+                    </select>
+                </td>
+                <td align="center" class="width35">
+                    <input type="text" ms-duplex="@el.txt" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content">
+        <div class="header">场上局势</div>
+        <table  border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr class="title">
+                <th class="width35">票型</th>
+                <th class="width25">轮次</th>
+                <th class="width20">参数</th>
+                <th class="width20">备注</th>
+            </tr>
+            <tr ms-for="($index,el) in @times">
+                <td align="center" class="width35">
+                    <input type="text" ms-duplex="@el.des" />
+                </td>
+                <td align="center" class="width25">
+                    <div>第{{$index+1}}夜</div>
+                </td>
+                <td align="center" class="width20">
+                    <select ms-duplex-number="@el.prop">
+                        <option ms-for="($index,tp) in @types2" ms-attr="{value : $index}">{{tp}}</option>
+                    </select>
+                </td>
+                <td align="center" class="width20">
+                    <input type="text" ms-duplex="@el.txt" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
